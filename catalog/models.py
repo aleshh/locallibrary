@@ -38,6 +38,12 @@ class Book(models.Model):
   def get_absolute_url(self):
     return reverse('book-detail', args=[str(self.id)])
 
+  def display_genre(self):
+    return ', '.join(genre.name for genre in self.genre.all()[:3])
+
+
+  display_genre.short_description = 'Genre'
+
 class BookInstance(models.Model):
   """
   Model to represent a specific copy of a book.
