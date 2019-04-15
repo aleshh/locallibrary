@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Books: Local Library</title>{% endblock %}
+
+{% block content %}
+  <h1>{{ book.title }}</h1>
+
+  <p>By <a href="">{{ book.author }}</a></p>
+  <p>
+    <strong>Genre:</strong>
+      {% for genre in book.genre.all %}
+        {{ genre }}
+        {% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    &nbsp;
+    <strong>Language:</strong> {{ book.language }}
+    &nbsp;
+    <strong>ISBN:</strong> {{ book.isbn}}
+  </p>
+  <p>{{book.summary }}</p>
+  <div class="book-copies">
+    <h2>Copies</h2>
+    <table>
+      {% for copy in book.bookinstance_set.all %}
+      <tr>
+        <td>
+          <strong>Imprint:</strong> {{ copy.imprint }}
+        </td>
+        <td>
+          <strong>Status:</strong> {{ copy.get_status_display }}
+        </td>
+        <td>
+          {% if copy.status == 'o' %}
+            <strong>Due back:</strong> {{ copy.due_back }}
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}

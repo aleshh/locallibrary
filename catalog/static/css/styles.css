@@ -14,6 +14,9 @@ a {
   text-decoration: none;
   color: #00c;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 .navbar {
   width: 100%;
@@ -37,4 +40,8 @@ a {
 }
 .content h1, h2, h3, p, ul {
   margin-bottom: 15px;
+}
+
+td {
+  padding: 2px 15px 2px 0;
 }
