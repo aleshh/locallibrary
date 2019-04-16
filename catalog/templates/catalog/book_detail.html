@@ -1,11 +1,11 @@
 {% extends "base_generic.html" %}
 
-{% block title %}<title>Books: Local Library</title>{% endblock %}
+{% block title %}{{ book.title }}: Local Library{% endblock %}
 
 {% block content %}
   <h1>{{ book.title }}</h1>
 
-  <p>By <a href="">{{ book.author }}</a></p>
+  <p>By <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
   <p>
     <strong>Genre:</strong>
       {% for genre in book.genre.all %}
