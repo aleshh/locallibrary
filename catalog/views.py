@@ -30,3 +30,9 @@ class AuthorListView(generic.ListView):
 
 class AuthorDetailView(generic.DetailView):
   model = Author
+
+class GenreListView(generic.ListView):
+  model = Genre
+
+class GenreDetailView(generic.DetailView):
+  model = Genre

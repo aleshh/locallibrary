@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Genre List: Local Library{% endblock %}
+
+{% block content %}
+  <h1>{{ genre.name }} Books</h1>
+
+  {% if genre.book_set.all %}
+    <ul>
+      {% for book in genre.book_set.all %}
+        <li>
+          <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are currently no {{ genre.name }} books in the library.</p>
+  {% endif %}
+{% endblock %}

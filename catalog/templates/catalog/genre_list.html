@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Genre List: Local Library{% endblock %}
+
+{% block content %}
+  <h1>Genre List</h1>
+
+  {% if genre_list %}
+    <ul>
+      {% for genre in genre_list %}
+        <li>
+          <a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no genres to display.</p>
+  {% endif %}
+{% endblock %}

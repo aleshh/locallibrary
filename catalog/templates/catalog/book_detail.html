@@ -9,8 +9,7 @@
   <p>
     <strong>Genre:</strong>
       {% for genre in book.genre.all %}
-        {{ genre }}
-        {% if not forloop.last %}, {% endif %}
+        <a href="{{ genre.get_absolute_url }}">{{ genre }}</a>{% if not forloop.last %}, {% endif %}
       {% endfor %}
     &nbsp;
     <strong>Language:</strong> {{ book.language }}

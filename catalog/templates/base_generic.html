@@ -12,10 +12,10 @@
   <div class="navbar">
     {% block navbar %}
       <ul>
-        <li>Local Library</li>
-        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'index' %}"><strong>Local Library</strong></a></li>
         <li><a href="{% url 'books' %}">All books</a></li>
         <li><a href="{% url 'authors' %}">All authors</a></li>
+        <li><a href="{% url 'genres' %}">Genres</a></li>
       </ul>
     {% endblock %}
   </div>
