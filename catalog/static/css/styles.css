@@ -31,6 +31,9 @@ a:hover {
   display: inline-block;
   padding-right: 20px;
 }
+.navbar ul li:last-child {
+  float: right;
+}
 
 .content {
   padding: 25px;
